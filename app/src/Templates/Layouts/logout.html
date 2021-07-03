@@ -9,9 +9,14 @@
     <link href="/assets/css/signin.css" rel="stylesheet">
   </head>
 
-  <body id="app" class="text-center">
-    {% block content %}
-    {% endblock %}
+  <body class="text-center">
+    <div id="app" class="mx-auto">
+      {% block content %}
+      {% endblock %}
+      <router-view></router-view>
+    </div>
   </body>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/js/app.js"></script>
 </html>

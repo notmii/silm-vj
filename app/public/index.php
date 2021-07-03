@@ -15,7 +15,6 @@ define('ROOT', __DIR__.'/..');
 define('TEMPLATES', ROOT.'/src/Templates');
 
 $container = new Container();
-
 $container->set(\Twig\Environment::class, function() {
   $loader = new \Twig\Loader\FilesystemLoader(TEMPLATES);
   $loader->addPath(TEMPLATES.'/Layouts', 'layouts');

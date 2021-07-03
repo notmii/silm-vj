@@ -1,7 +1,13 @@
 // webpack.config.js
-const { VueLoaderPlugin } = require('vue-loader')
+const { VueLoaderPlugin } = require('vue-loader');
+const path = require('path');
 
 module.exports = {
+  entry: path.resolve(__dirname, 'asset-src/app.js'),
+  output: {
+    filename: 'app.js',
+    path: path.resolve(__dirname, 'public/assets/js'),
+  },
   mode: 'development',
   module: {
     rules: [
@@ -9,14 +15,10 @@ module.exports = {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
-      // this will apply to both plain `.js` files
-      // AND `<script>` blocks in `.vue` files
       {
         test: /\.js$/,
         loader: 'babel-loader'
       },
-      // this will apply to both plain `.css` files
-      // AND `<style>` blocks in `.vue` files
       {
         test: /\.css$/,
         use: [
@@ -27,7 +29,12 @@ module.exports = {
     ]
   },
   plugins: [
-    // make sure to include the plugin for the magic
     new VueLoaderPlugin()
-  ]
+  ],
+  resolve: {
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js',
+      '@modules': path.resolve(__dirname, 'asset-src/modules')
+    }
+  }
 }

@@ -4,7 +4,7 @@
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Notmii\\SlimVj\\": "src/"
+            "SlimVj\\": "src/"
         }
     },
     "authors": [
@@ -16,6 +16,8 @@
     "require": {
         "slim/slim": "4.*",
         "slim/psr7": "^1.4",
-        "twig/twig": "^3.3"
+        "twig/twig": "^3.3",
+        "slim/twig-view": "^3.2",
+        "php-di/php-di": "^6.3"
     }
 }
